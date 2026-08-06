@@ -1,12 +1,624 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>فروشگاه روغن موتور</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتوسرویس هاشمی | فروشگاه تخصصی روغن موتور</title>
+    <!-- استایل فونت وزیر برای زیبایی متن‌ها -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Vazirmatn, sans-serif;
+        }
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        /* هدر سایت */
+        header {
+            background-color: #1a1a1a;
+            border-bottom: 3px solid #ffcc00;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            color: #ffcc00;
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+        header p {
+            color: #aaaaaa;
+            font-size: 14px;
+        }
+        /* بخش معرفی اصلی */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
+        .hero h2 {
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+        .hero p {
+            color: #cccccc;
+            max-width: 60px0px;
+            margin: 0 auto 25px auto;
+            font-size: 15px;
+        }
+        .btn-call {
+            background-color: #ffcc00;
+            color: #000;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+            display: inline-block;
+        }
+        .btn-call:hover {
+            background-color: #e6b800;
+        }
+
+        /* بخش دسته‌بندی و محصولات */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .section-title h3 {
+            font-size: 22px;
+            color: #ffcc00;
+            display: inline-block;
+            border-bottom: 2px solid #ffcc00;
+            padding-bottom: 10px;
+        }
+        
+        /* کارت‌های محصولات */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .product-card {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: #ffcc00;
+        }
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background-color: #252525;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 40px;
+            position: relative;
+        }
+        /* عکس موقت روغن */
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 20px;
+            flex-grow: 1;
+        }
+        .product-brand {
+            color: #ffcc00;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .product-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        .product-desc {
+            color: #aaaaaa;
+            font-size: 13px;
+            margin-bottom: 15px;
+            height: 60px;
+            overflow: hidden;
+        }
+        .product-price {
+            font-size: 16px;
+            color: #ffffff;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-top: 1px solid #333;
+            padding-top: 10px;
+        }
+        
+        /* دکمه‌های سفارش */
+        .action-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .btn-order-wa {
+            background-color: #25d366;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 13px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-order-wa:hover {
+            background-color: #1ebe57;
+        }
+        .btn-details {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+        .btn-details:hover {
+            background-color: #444;
+        }
+
+        /* فوتر و اطلاعات تماس */
+        footer {
+            background-color: #1a1a1a;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 1px solid #333;
+            text-align: center;
+        }
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+        .contact-info p {
+            margin-bottom: 10px;
+            color: #cccccc;
+        }
+        .contact-info span {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+        .copyright {
+            color: #666;
+            font-size: 12px;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+        }
+    </style>
 </head>
 <body>
-  <h1>به فروشگاه روغن موتور خوش آمدید</h1>
-  <p>انواع روغن موتور و محصولات خودرویی</p>
+
+    <!-- هدر -->
+    <header>
+        <h1>اتوسرویس هاشمی</h1>
+        <p>مرکز تخصصی تعویض و فروش انواع روغن موتور و فیلترهای خودرویی</p>
+    </header>
+
+    <!-- بخش اصلی معرفی -->
+    <section class="hero">
+        <h2>روغن موتور مناسب خودروی خود را با بهترین قیمت بخرید</h2>
+        <p>فروش مستقیم باکیفیت‌ترین روغن موتورهای ایرانی و خارجی با ضمانت اصالت کالا. ارسال به سراسر کشور یا تعویض در محل اتوسرویس ما.</p>
+        <a href="tel:09120000000" class="btn-call">تماس مستقیم با اتوسرویس: ۰۹۱۲۰۰۰۰۰۰۰</a>
+    </section>
+
+    <!-- بخش محصولات -->
+    <div class="container">
+        <div class="section-title">
+            <h3>روغن موتورهای پرفروش</h3>
+        </div>
+
+        <div class="products-grid">
+            
+            <!-- محصول اول: روغن پراید -->
+            <div class="product-card">
+                <div class="product-image">
+                    <!-- عکس نمونه روغن موتور -->
+                    <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=400&q=80" alt="روغن موتور پراید">
+                </div>
+                <div class="product-info">
+                    <div class="product-brand">بهران (Behran)</div>
+                    <h4 class="product-title">بهران تکتاز 20W-50</h4>
+                    <p class="product-desc">مناسب برای خودروهای پراید، پژو ۴۰۵ و سمند قدیمی. چهار لیتری فلزی با روانکاری عالی.</p>
+                    <div class="product-price">قیمت: تماس بگیرید</div>
+                    <div class="action-buttons">
+                        <a href="https://wa.me/989120000000?text=سلام%20بهران%20تکتاز%20میخواستم" target="_blank" class="btn-order-wa">سفارش در واتساپ</a>
+                        <a href="tel:09120000000" class="btn-details">تماس تلفنی</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- محصول دوم: روغن مناسب پژو و سمند EF7 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=400&q=80" alt="روغن موتور پژو">
+                </div>
+                <div class="product-info">
+                    <div class="product-brand">بهران (Behran)</div>
+                    <h4 class="product-title">بهران سوپر پیشتاز 10W-40</h4>
+                    <p class="product-desc">روغن موتور نیمه‌سنتتیک مناسب برای پژو پارس، سمند EF7، ۲۰۶ تیپ ۵ و رنو ال ۹۰.</p>
+                    <div class="product-price">قیمت: تماس بگیرید</div>
+                    <div class="action-buttons">
+                        <a href="https://wa.me/989120000000?text=سلام%20بهران%20سوپر%20پیشتاز%20میخواستم" target="_blank" class="btn-order-wa">سفارش در واتساپ</a>
+                        <a href="tel:09120000000" class="btn-details">تماس تلفنی</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- محصول سوم: روغن خارجی/باکیفیت بالا -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=400&q=80" alt="روغن موتور خارجی">
+                </div>
+                <div class="product-info">
+                    <div class="product-brand">کاسترول (Castrol)</div>
+                    <h4 class="product-title">کاسترول مگناتک 10W-40</h4>
+                    <p class="product-desc">روغن موتور باکیفیت فوق‌العاده جهت محافظت از موتور از لحظه استارت. مناسب خودروهای داخلی و وارداتی.</p>
+                    <div class="product-price">قیمت: تماس بگیرید</div>
+                    <div class="action-buttons">
+                        <a href="https://wa.me/989120000000?text=سلام%20کاسترول%20مگناتک%20میخواستم" target="_blank" class="btn-order-wa">سفارش در واتساپ</a>
+                        <a href="tel:09120000000" class="btn-details">تماس تلفنی</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- فوتر و اطلاعات تماس -->
+    <footer>
+        <div class="contact-info">
+            <p><strong>آدرس اتوسرویس:</strong> تهران، خیابان اصلی، پلاک ۱۲، اتوسرویس هاشمی</p>
+            <p><strong>تلفن تماس:</strong> <span>۰۹۱۲۰۰۰۰۰۰۰</span> - <span>۰۲۱۵۵۵۵۵۵۵</span></p>
+            <p><strong>ساعت کاری:</strong> همه روزه از ساعت ۸ صبح تا ۹ شب (روزهای تعطیل تا ساعت ۲ ظهر)</p>
+        </div>
+        <div class="copyright">
+            تمامی حقوق برای اتوسرویس هاشمی محفوظ است. طراحی شده با گیت‌هاب پیجز.
+        </div>
+    </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتوسرویس هاشمی | فروشگاه تخصصی روغن موتور</title>
+    <!-- استایل فونت وزیر برای زیبایی متن‌ها -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Vazirmatn, sans-serif;
+        }
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        /* هدر سایت */
+        header {
+            background-color: #1a1a1a;
+            border-bottom: 3px solid #ffcc00;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            color: #ffcc00;
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+        header p {
+            color: #aaaaaa;
+            font-size: 14px;
+        }
+        /* بخش معرفی اصلی */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
+        .hero h2 {
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+        .hero p {
+            color: #cccccc;
+            max-width: 60px0px;
+            margin: 0 auto 25px auto;
+            font-size: 15px;
+        }
+        .btn-call {
+            background-color: #ffcc00;
+            color: #000;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+            display: inline-block;
+        }
+        .btn-call:hover {
+            background-color: #e6b800;
+        }
+
+        /* بخش دسته‌بندی و محصولات */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .section-title h3 {
+            font-size: 22px;
+            color: #ffcc00;
+            display: inline-block;
+            border-bottom: 2px solid #ffcc00;
+            padding-bottom: 10px;
+        }
+        
+        /* کارت‌های محصولات */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .product-card {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: #ffcc00;
+        }
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background-color: #252525;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 40px;
+            position: relative;
+        }
+        /* عکس موقت روغن */
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 20px;
+            flex-grow: 1;
+        }
+        .product-brand {
+            color: #ffcc00;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .product-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        .product-desc {
+            color: #aaaaaa;
+            font-size: 13px;
+            margin-bottom: 15px;
+            height: 60px;
+            overflow: hidden;
+        }
+        .product-price {
+            font-size: 16px;
+            color: #ffffff;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-top: 1px solid #333;
+            padding-top: 10px;
+        }
+        
+        /* دکمه‌های سفارش */
+        .action-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .btn-order-wa {
+            background-color: #25d366;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 13px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-order-wa:hover {
+            background-color: #1ebe57;
+        }
+        .btn-details {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+        .btn-details:hover {
+            background-color: #444;
+        }
+
+        /* فوتر و اطلاعات تماس */
+        footer {
+            background-color: #1a1a1a;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 1px solid #333;
+            text-align: center;
+        }
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+        .contact-info p {
+            margin-bottom: 10px;
+            color: #cccccc;
+        }
+        .contact-info span {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+        .copyright {
+            color: #666;
+            font-size: 12px;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- هدر -->
+    <header>
+        <h1>اتوسرویس هاشمی</h1>
+        <p>مرکز تخصصی تعویض و فروش انواع روغن موتور و فیلترهای خودرویی</p>
+    </header>
+
+    <!-- بخش اصلی معرفی -->
+    <section class="hero">
+        <h2>روغن موتور مناسب خودروی خود را با بهترین قیمت بخرید</h2>
+        <p>فروش مستقیم باکیفیت‌ترین روغن موتورهای ایرانی و خارجی با ضمانت اصالت کالا. ارسال به سراسر کشور یا تعویض در محل اتوسرویس ما.</p>
+        <a href="tel:09120000000" class="btn-call">تماس مستقیم با اتوسرویس: ۰۹۱۲۰۰۰۰۰۰۰</a>
+    </section>
+
+    <!-- بخش محصولات -->
+    <div class="container">
+        <div class="section-title">
+            <h3>روغن موتورهای پرفروش</h3>
+        </div>
+
+        <div class="products-grid">
+            
+            <!-- محصول اول: روغن پراید -->
+            <div class="product-card">
+                <div class="product-image">
+                    <!-- عکس نمونه روغن موتور -->
+                    <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=400&q=80" alt="روغن موتور پراید">
+                </div>
+                <div class="product-info">
+                    <div class="product-brand">بهران (Behran)</div>
+                    <h4 class="product-title">بهران تکتاز 20W-50</h4>
+                    <p class="product-desc">مناسب برای خودروهای پراید، پژو ۴۰۵ و سمند قدیمی. چهار لیتری فلزی با روانکاری عالی.</p>
+                    <div class="product-price">قیمت: تماس بگیرید</div>
+                    <div class="action-buttons">
+                        <a href="https://wa.me/989120000000?text=سلام%20بهران%20تکتاز%20میخواستم" target="_blank" class="btn-order-wa">سفارش در واتساپ</a>
+                        <a href="tel:09120000000" class="btn-details">تماس تلفنی</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- محصول دوم: روغن مناسب پژو و سمند EF7 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=400&q=80" alt="روغن موتور پژو">
+                </div>
+                <div class="product-info">
+                    <div class="product-brand">بهران (Behran)</div>
+                    <h4 class="product-title">بهران سوپر پیشتاز 10W-40</h4>
+                    <p class="product-desc">روغن موتور نیمه‌سنتتیک مناسب برای پژو پارس، سمند EF7، ۲۰۶ تیپ ۵ و رنو ال ۹۰.</p>
+                    <div class="product-price">قیمت: تماس بگیرید</div>
+                    <div class="action-buttons">
+                        <a href="https://wa.me/989120000000?text=سلام%20بهران%20سوپر%20پیشتاز%20میخواستم" target="_blank" class="btn-order-wa">سفارش در واتساپ</a>
+                        <a href="tel:09120000000" class="btn-details">تماس تلفنی</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- محصول سوم: روغن خارجی/باکیفیت بالا -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=400&q=80" alt="روغن موتور خارجی">
+                </div>
+                <div class="product-info">
+                    <div class="product-brand">کاسترول (Castrol)</div>
+                    <h4 class="product-title">کاسترول مگناتک 10W-40</h4>
+                    <p class="product-desc">روغن موتور باکیفیت فوق‌العاده جهت محافظت از موتور از لحظه استارت. مناسب خودروهای داخلی و وارداتی.</p>
+                    <div class="product-price">قیمت: تماس بگیرید</div>
+                    <div class="action-buttons">
+                        <a href="https://wa.me/989120000000?text=سلام%20کاسترول%20مگناتک%20میخواستم" target="_blank" class="btn-order-wa">سفارش در واتساپ</a>
+                        <a href="tel:09120000000" class="btn-details">تماس تلفنی</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- فوتر و اطلاعات تماس -->
+    <footer>
+        <div class="contact-info">
+            <p><strong>آدرس اتوسرویس:</strong> تهران، خیابان اصلی، پلاک ۱۲، اتوسرویس هاشمی</p>
+            <p><strong>تلفن تماس:</strong> <span>۰۹۱۲۰۰۰۰۰۰۰</span> - <span>۰۲۱۵۵۵۵۵۵۵</span></p>
+            <p><strong>ساعت کاری:</strong> همه روزه از ساعت ۸ صبح تا ۹ شب (روزهای تعطیل تا ساعت ۲ ظهر)</p>
+        </div>
+        <div class="copyright">
+            تمامی حقوق برای اتوسرویس هاشمی محفوظ است. طراحی شده با گیت‌هاب پیجز.
+        </div>
+    </footer>
+
 </body>
 </html>
