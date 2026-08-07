@@ -9,6 +9,63 @@
   <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
   
   <style>
+
+    footer {
+  background: #1a1a1a;
+  border-top: 3px solid #ffcc00;
+  padding: 30px 20px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-info {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-item {
+  flex: 1;
+  min-width: 250px;
+  background: #222;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #333;
+}
+
+.footer-item h4 {
+  color: #ffcc00;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.footer-item p,
+.footer-item a {
+  color: #ddd;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.copyright {
+  color: #777;
+  font-size: 12px;
+  margin-top: 15px;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+}
+
+@media (max-width: 768px) {
+  .footer-info {
+    flex-direction: column;
+  }
+}
+
     :root {
       --bg-color: #121212;
       --card-bg: #1a1a1a;
@@ -293,6 +350,32 @@
 
     <a class="back-btn" href="oils.html">بازگشت به روغن‌ها</a>
   </main>
+
+  <footer>
+  <div class="footer-container">
+    <div class="footer-info">
+      <div class="footer-item">
+        <h4>📍 آدرس</h4>
+        <p>کرج ، مشکین دشت ، بلوار دکتر حسابی ، اتوسرویس هاشمی</p>
+      </div>
+
+      <div class="footer-item">
+        <h4>📞 شماره تلفن</h4>
+        <p><a href="tel:09120000000">۰۹۹۶۲۵۳۰۶۳۴</a></p>
+      </div>
+
+      <div class="footer-item">
+        <h4>⏰ ساعت کاری</h4>
+        <p>شنبه تا پنج شنبه از ساعت ۹ صبح تا ۶ بعداز ظهر / جمعه ها از ۱۰ صبح تا ۴ بعدازظهر</p>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p>© اتوسرویس هاشمی</p>
+    </div>
+  </div>
+</footer>
+
 
 </body>
 </html>
