@@ -78,23 +78,34 @@
     }
     .back:hover { background: #444; }
   </style>
-</head>
+  /* این بخش را در قسمت <style> فایل oils.html جایگزین کن */
 
+.hero-banner {
+  padding: 20px 20px 0; /* دقیقاً مشابه صفحه محصول */
+  max-width: 1000px;    /* عرض را با کادر محصولات یکی کن */
+  margin: 0 auto;       /* وسط‌چین کردن */
+}
+
+.hero-banner img {
+  width: 100%;
+  height: 280px;        /* ارتفاع استاندارد دسکتاپ */
+  object-fit: cover;    /* جلوگیری از دفرمه شدن عکس */
+  display: block;
+  border-radius: 16px;  /* گردی لبه‌ها مشابه صفحه محصول */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* اصلاح برای نمایش در موبایل */
+@media (max-width: 768px) {
   .hero-banner {
-      padding: 20px 20px 0;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+    padding: 15px 15px 0;
+  }
+  .hero-banner img {
+    height: 180px;      /* ارتفاع در موبایل مشابه صفحه محصول */
+  }
+}
 
-    .hero-banner img {
-      width: 100%;
-      height: 280px;
-      object-fit: cover;
-      display: block;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-    }
-  
+</head>
 <body>
 
   <header>
