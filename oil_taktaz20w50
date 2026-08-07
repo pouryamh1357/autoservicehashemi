@@ -4,177 +4,250 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>روغن بهران سوپر پیشتاز | اتوسرویس هاشمی</title>
-
+  
+  <!-- بارگذاری استاندارد فونت وزیر -->
   <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
-
+  
   <style>
-    *{
-      box-sizing:border-box;
-      margin:0;
-      padding:0;
-      font-family:Vazirmatn,sans-serif;
+    :root {
+      --bg-color: #121212;
+      --card-bg: #1a1a1a;
+      --primary-color: #ffcc00;
+      --text-color: #ffffff;
+      --text-muted: #dedede;
+      --border-color: #343434;
+      --whatsapp-color: #25d366;
     }
 
-    body{
-      background:#121212;
-      color:#ffffff;
-      line-height:2;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Vazirmatn, sans-serif;
     }
 
-    header{
-      background:#1a1a1a;
-      border-bottom:3px solid #ffcc00;
-      padding:20px;
-      text-align:center;
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.8;
+      padding-bottom: 40px;
     }
 
-    header h1{
-      color:#ffcc00;
-      font-size:24px;
+    header {
+      background-color: var(--card-bg);
+      border-bottom: 3px solid var(--primary-color);
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
-    .hero-banner{
-      padding:20px 20px 0;
-      max-width:1100px;
-      margin:auto;
+    header h1 {
+      color: var(--primary-color);
+      font-size: 24px;
+      font-weight: 800;
     }
 
-    .hero-banner img{
-      width:100%;
-      height:280px;
-      object-fit:cover;
-      display:block;
-      border-radius:18px;
-      box-shadow:0 6px 20px rgba(0,0,0,0.35);
+    .hero-banner {
+      padding: 20px 20px 0;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
-    .wrap{
-      max-width:1000px;
-      margin:30px auto 45px;
-      padding:0 20px;
+    .hero-banner img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
     }
 
-    .product-box{
-      background:#1a1a1a;
-      border:1px solid #343434;
-      border-radius:14px;
-      padding:22px;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:28px;
+    .wrap {
+      max-width: 1000px;
+      margin: 30px auto 0;
+      padding: 0 20px;
     }
 
-    .product-image{
-      width:100%;
-      min-height:330px;
-      height:100%;
-      object-fit:cover;
-      border-radius:12px;
-      background:#252525;
+    .product-box {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 25px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
     }
 
-    h2{
-      color:#ffcc00;
-      font-size:25px;
-      margin-bottom:10px;
+    .product-image-wrapper {
+      width: 100%;
+      height: 100%;
+      min-height: 350px;
+      border-radius: 12px;
+      overflow: hidden;
+      background-color: #252525;
     }
 
-    p{
-      color:#dedede;
-      font-size:15px;
-      margin-bottom:12px;
+    .product-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
-    h3{
-      color:#ffcc00;
-      margin-top:18px;
-      font-size:18px;
+    .product-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
-    ul{
-      padding-right:22px;
-      color:#dedede;
-      font-size:15px;
+    .product-details h2 {
+      color: var(--primary-color);
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 12px;
     }
 
-    .product-buttons{
-      margin-top:24px;
+    .product-details .description {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin-bottom: 20px;
+      text-align: justify;
     }
 
-    .price-btn{
-      display:block;
-      width:100%;
-      background:#ffcc00;
-      color:#111;
-      padding:14px;
-      border-radius:9px;
-      text-align:center;
-      text-decoration:none;
-      font-size:17px;
-      font-weight:700;
-      margin-bottom:12px;
+    .product-details h3 {
+      color: var(--primary-color);
+      font-size: 17px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 5px;
     }
 
-    .contact-buttons{
-      display:flex;
-      gap:10px;
+    .spec-list {
+      list-style: none;
+      margin-bottom: 25px;
     }
 
-    .contact-buttons a{
-      flex:1;
-      padding:12px;
-      border-radius:9px;
-      text-align:center;
-      text-decoration:none;
-      font-weight:700;
+    .spec-list li {
+      position: relative;
+      padding-right: 18px;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: var(--text-muted);
     }
 
-    .call-btn{
-      background:#343434;
-      color:#ffffff;
+    .spec-list li::before {
+      content: "•";
+      color: var(--primary-color);
+      position: absolute;
+      right: 0;
+      font-weight: bold;
     }
 
-    .whatsapp-btn{
-      background:#25d366;
-      color:#ffffff;
+    .product-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
-    .back-btn{
-      display:block;
-      width:max-content;
-      margin:25px auto 0;
-      background:#333333;
-      color:#ffffff;
-      padding:10px 17px;
-      border-radius:8px;
-      text-decoration:none;
+    .price-btn {
+      display: block;
+      width: 100%;
+      background-color: var(--primary-color);
+      color: #111111;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 800;
+      transition: background-color 0.2s ease;
     }
 
-    @media (max-width:700px){
-      .hero-banner{
-        padding:15px 15px 0;
+    .price-btn:hover {
+      background-color: #e6b800;
+    }
+
+    .contact-buttons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .contact-buttons a {
+      flex: 1;
+      padding: 12px 10px;
+      border-radius: 10px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 700;
+      transition: opacity 0.2s ease;
+    }
+
+    .contact-buttons a:hover {
+      opacity: 0.9;
+    }
+
+    .call-btn {
+      background-color: var(--border-color);
+      color: var(--text-color);
+    }
+
+    .whatsapp-btn {
+      background-color: var(--whatsapp-color);
+      color: var(--text-color);
+    }
+
+    .back-btn {
+      display: block;
+      width: max-content;
+      margin: 30px auto 0;
+      background-color: var(--card-bg);
+      color: var(--text-muted);
+      border: 1px solid var(--border-color);
+      padding: 10px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: all 0.2s ease;
+    }
+
+    .back-btn:hover {
+      background-color: var(--border-color);
+      color: var(--text-color);
+    }
+
+    /* واکنش‌گرایی برای موبایل */
+    @media (max-width: 768px) {
+      .hero-banner {
+        padding: 15px 15px 0;
       }
 
-      .hero-banner img{
-        height:190px;
+      .hero-banner img {
+        height: 180px;
       }
 
-      .wrap{
-        padding:0 15px;
+      .wrap {
+        padding: 0 15px;
+        margin-top: 20px;
       }
 
-      .product-box{
-        grid-template-columns:1fr;
+      .product-box {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 20px;
       }
 
-      .product-image{
-        min-height:260px;
+      .product-image-wrapper {
+        min-height: 280px;
+        height: 280px;
       }
     }
   </style>
 </head>
-
 <body>
+
   <header>
     <h1>اتوسرویس هاشمی</h1>
   </header>
@@ -185,39 +258,36 @@
 
   <main class="wrap">
     <article class="product-box">
-      <img class="product-image" src="images/behranp10w40.jpg" alt="روغن بهران سوپر پیشتاز 10W-40">
+      <!-- بخش تصویر محصول -->
+      <div class="product-image-wrapper">
+        <img class="product-image" src="images/oil_taktaz20w50.jpg" alt="روغن بهران تکتاز 20w 50">
+      </div>
 
-      <section>
-        <h2>بهران تکتاز 20W50</h2>
+      <!-- بخش جزئیات محصول -->
+      <section class="product-details">
+        <div>
+          <h2>بهران تکتاز 20W50</h2>
+          <p class="description">
+            روغن موتور بهران تکتاز، مناسب خودروهای قدیمی سواری و استفاده‌ی روزمره و تعمیر موتور است.
+          </p>
 
-        <p>
-           روغن موتور بهران تکتاز، مناسب خودروهای قدیمی سواری
-          و استفاده‌ی روزمره وتعمیر موتور است.
-        </p>
+          <h3>مشخصات محصول</h3>
+          <ul class="spec-list">
+            <li>برند: بهران</li>
+            <li>مدل: تکتاز</li>
+            <li>گرانروی: 20w50</li>
+            <li>نوع روغن: ساده</li>
+            <li>مناسب برای: خودروهای قدیمی</li>
+            <li>برای اطلاع از موجودی و قیمت تماس بگیرید.</li>
+          </ul>
+        </div>
 
-        <h3>مشخصات محصول</h3>
-        <ul>
-          <li>برند: بهران</li>
-          <li>مدل: تکتاز</li>
-          <li>گرانروی : 20w50</li>
-          <li>نوع روغن: ساده</li>
-          <li>مناسب برای: خودرو های قدیمی</li>
-          <li>برای اطلاع از موجودی و قیمت تماس بگیرید.</li>
-        </ul>
-
+        <!-- دکمه‌های ارتباطی -->
         <div class="product-buttons">
           <a class="price-btn" href="tel:09962530634">استعلام قیمت</a>
-
           <div class="contact-buttons">
-            <a class="call-btn" href="tel:09962530634">تماس</a>
-
-            <a
-              class="whatsapp-btn"
-              target="_blank"
-              href="https://wa.me/989962530634?text=سلام، برای روغن بهران سوپر پیشتاز 10W-40 قیمت و موجودی می‌خواستم."
-            >
-              واتساپ
-            </a>
+            <a class="call-btn" href="tel:09962530634">تماس تلفنی</a>
+            <a class="whatsapp-btn" target="_blank" href="https://wa.me/989962530634?text=سلام، برای روغن بهران سوپر پیشتاز 10W-40 قیمت و موجودی می‌خواستم.">واتساپ</a>
           </div>
         </div>
       </section>
@@ -225,5 +295,6 @@
 
     <a class="back-btn" href="oils.html">بازگشت به روغن‌ها</a>
   </main>
+
 </body>
 </html>
