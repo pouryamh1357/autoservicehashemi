@@ -197,6 +197,78 @@
             border-top: 1px solid #333;
             padding-top: 20px;
         }
+
+        .best-sellers {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.best-sellers h2 {
+  color: #ffcc00;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.best-sellers-slider {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 10px;
+}
+
+.best-sellers-slider::-webkit-scrollbar {
+  height: 8px;
+}
+
+.best-sellers-slider::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 10px;
+}
+
+.best-sellers-card {
+  min-width: 260px;
+  max-width: 260px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #fff;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  transition: 0.3s;
+}
+
+.best-sellers-card:hover {
+  transform: translateY(-6px);
+  border-color: #ffcc00;
+}
+
+.best-sellers-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.best-sellers-card .info {
+  padding: 15px;
+  text-align: center;
+}
+
+.best-sellers-card .info h3 {
+  color: #ffcc00;
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+
+.best-sellers-card .info p {
+  color: #bbb;
+  font-size: 14px;
+}
     </style>
     </head>
     <style>
@@ -290,6 +362,39 @@
                     <span>مشاهده محصولات</span>
                 </div>
             </a>
+
+            <section class="best-sellers">
+  <h2>محصولات پرفروش</h2>
+
+  <div class="best-sellers-slider">
+
+    <a class="best-sellers-card" href="oil-behranp10w40.html">
+      <img src="images/behranp10w40.jpg" alt="بهران سوپر پیشتاز">
+      <div class="info">
+        <h3>بهران سوپر پیشتاز</h3>
+        <p>روغن موتور نیمه سینتتیک 10W-40</p>
+      </div>
+    </a>
+
+    <a class="best-sellers-card" href="oil-taktaz20w50.html">
+      <img src="images/taktaz.jpg" alt="بهران تکتاز">
+      <div class="info">
+        <h3>بهران تکتاز</h3>
+        <p>مناسب خودروهای با کارکرد بالا</p>
+      </div>
+    </a>
+
+    <a class="best-sellers-card" href="oil-rana10w40.html">
+      <img src="images/oil_rana10w40.jpg" alt="بهران رانا">
+      <div class="info">
+        <h3>بهران رانا</h3>
+        <p>مناسب خودروهای یورو 4</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
 
         </div>
     </div>
